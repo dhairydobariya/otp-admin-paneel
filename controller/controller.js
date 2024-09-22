@@ -16,7 +16,8 @@ const fs = require('fs')
 
 var randomstring = require("randomstring");
 
-
+require('dotenv').config();
+ 
 
 var u_id = null;
 const transporter = nodemailer.createTransport({
@@ -24,8 +25,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: "dhairydobariya@gmail.com",
-        pass: "spzhmexlhgikywcp",
+        user: process.env.email,
+        pass: process.env.pass
     },
 });
 
